@@ -6,5 +6,5 @@ chat_id = 49479018
 
 def solution(x: np.array) -> bool: 
     alpha = 0.02
-    stat, pval  = ztest(x, value=300, alternative='larger')
+    stat, pval  = ztest(x, value=300, alternative='smaller')
     return pval < alpha
