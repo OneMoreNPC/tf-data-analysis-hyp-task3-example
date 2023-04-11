@@ -1,11 +1,10 @@
 import pandas as pd
 import numpy as np
+from statsmodels.stats.weightstats import ztest
 
+chat_id = 49479018
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
-
-def solution(...) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+def solution(x: np.array) -> bool: 
+    alpha = 0.02
+    stat, pval  = ztest(x, value=300, alternative='larger')
+    return pval < alpha
